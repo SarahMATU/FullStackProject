@@ -17,17 +17,14 @@ function MainNavigation() {
 
 
   const contents = [
-    {title: 'Challenge: fix this!', webAddress: '/'}, 
-    {title: 'Challenge: fix this!', webAddress: '/'}, 
-    {title: 'Challenge: fix this!', webAddress: '/'}, 
-    {title: 'Challenge: fix this!', webAddress: '/'}, 
+    {title: 'Add a new Book', webAddress: '/new-book'},
+    {title: 'Printer', webAddress: '/new-book'}, 
 
   ]
   return (
     <header className={classes.header}>
       <HamMenuContent contents={contents} />
       <HamMenu toggleMenuHide={() => toggleMenuHide()} />
-      <HamMenuFAB toggleMenuHide={() => toggleMenuHide()} />
       <h1>ATU Library</h1>
       <nav>
         <ul>

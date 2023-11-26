@@ -21,9 +21,10 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
-  .mainContent::-webkit-scrollbar {
-    display: none;
-  }
+
+.mainContent::-webkit-scrollbar {
+  display: none;
+}
 
 .menuItem {
     color: black;

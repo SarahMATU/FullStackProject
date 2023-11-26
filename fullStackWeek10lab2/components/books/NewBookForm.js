@@ -20,7 +20,7 @@ function NewBookForm(props) {
     const BookData = {
       title: enteredTitle,
       image: enteredImage,
-      auhtor: enteredAuthor,
+      author: enteredAuthor,
       description: enteredDescription,
     };
 
