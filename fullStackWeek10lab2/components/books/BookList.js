@@ -4,13 +4,14 @@ import classes from './BookList.module.css';
 function BookList(props) {
   return (
     <ul className={classes.list}>
-      {props.Books.map((Book) => (
+      const books = props.books || [];
+      {props.books.map((book) => (
         <BookItem
-          key={Book.id}
-          id={Book.id}
-          image={Book.image}
-          title={Book.title}
-          author={Book.author}
+          key={book.id}
+          id={book.id}
+          image={book.image}
+          title={book.title}
+          author={book.author}
         />
       ))}
     </ul>
