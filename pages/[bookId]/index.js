@@ -1,4 +1,4 @@
-import BookDetail from '../../components/meetups/BookDetail'
+import BookDetail from '../../components/books/BookDetail'
 import { useRouter } from 'next/router'
 import GlobalContext from "../../pages/store/globalContext"
 import { useContext } from 'react'

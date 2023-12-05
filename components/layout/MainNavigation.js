@@ -22,9 +22,7 @@ function MainNavigation() {
   ]
   return (
     <header className={classes.header}>
-      <HamMenuContent contents={contents} />
-      <HamMenu toggleMenuHide={() => toggleMenuHide()} />
-      <h1>ATU Library</h1>
+      <div className={classes.title}>ATU Library</div>
       <nav>
         <ul>
           <li>
