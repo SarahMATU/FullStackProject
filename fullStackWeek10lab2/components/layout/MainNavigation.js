@@ -1,7 +1,6 @@
 import classes from './MainNavigation.module.css'
 import Link from 'next/link'
 import HamMenu from "../generic/HamMenu"
-import HamMenuFAB from "../generic/HamMenuFAB"
 import { useContext } from 'react'
 import GlobalContext from "../../pages/store/globalContext"
 import HamMenuContent from "./HamMenuContent"

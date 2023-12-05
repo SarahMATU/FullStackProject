@@ -8,15 +8,22 @@ export default function () {
     const router = useRouter();
 
     // Back to basics, a simple for loop. Also trim() comes into play as it usually does!
-    let returnVal = null
+    let bookDetails = null
     for (let ii = 0; ii < globalCtx.theGlobalObject.books.length; ii++) {
         let temp = globalCtx.theGlobalObject.books[ii]
         if (temp.bookId.trim() == router.query.bookId.trim()) {
-            returnVal = <BookDetail image={temp.image} title={temp.title} description={temp.description} />
+            bookDetails = temp;
         }
     }
-    // In the real world, we'd put the code above in the store context module. 
-    return returnVal
+
+    return bookDetails ? (
+        <BookDetail 
+        image={temp.image} 
+        title={temp.title} 
+        description={temp.description} />
+    ) : (
+        <p>Book not Found</p>
+    );
 }
 
 {/* <BookDetail
