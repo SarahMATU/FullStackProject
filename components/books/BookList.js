@@ -2,7 +2,7 @@ import BookItem from './BookItem';
 import classes from './BookList.module.css';
 
 function BookList(props) {
-    const books = props.books;
+    const books = props.books || [];
 
     console.log('props.books:', props.books);
   return (
