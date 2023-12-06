@@ -1,4 +1,5 @@
 import classes from "./BookDetail.module.css";
+import React from 'react';
 
 function BookDetail(props) {
 	return (
@@ -29,3 +30,4 @@ function BookDetail(props) {
 }
 
 export default BookDetail;
+
