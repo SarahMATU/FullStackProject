@@ -1,23 +1,35 @@
-import BookDetail from '../../components/meetups/BookDetail'
-import { useRouter } from 'next/router'
-import GlobalContext from "../../pages/store/globalContext"
-import { useContext } from 'react'
+import BookDetail from '../../components/books/BookDetail';
+import { useRouter } from 'next/router';
+import GlobalContext from "../../pages/store/globalContext";
+import { useContext } from 'react';
 
-export default function () {
-    const globalCtx = useContext(GlobalContext)
+export default function BookDetailPage() {
+    const globalCtx = useContext(GlobalContext);
     const router = useRouter();
 
     // Back to basics, a simple for loop. Also trim() comes into play as it usually does!
-    let returnVal = null
+    let bookDetails = null;
     for (let ii = 0; ii < globalCtx.theGlobalObject.books.length; ii++) {
-        let temp = globalCtx.theGlobalObject.books[ii]
-        if (temp.bookId.trim() == router.query.bookId.trim()) {
-            returnVal = <BookDetail image={temp.image} title={temp.title} description={temp.description} />
+        let temp = globalCtx.theGlobalObject.books[ii];
+        // Check if bookId is defined before using trim()
+        if (temp._id.trim() == router.query.bookId.trim()) {
+            bookDetails = temp;
+            break; // Exit the loop once a match is found
         }
     }
-    // In the real world, we'd put the code above in the store context module. 
-    return returnVal
+
+    // Render the BookDetail component if bookDetails is found
+    return bookDetails ? (
+        <BookDetail
+            image={bookDetails.image}
+            title={bookDetails.title}
+            description={bookDetails.description}
+        />
+    ) : (
+        <p>Book not found</p>
+    );
 }
+
 
 {/* <BookDetail
         image = 'https://images.ctfassets.net/usf1vwtuqyxm/3d9kpFpwHyjACq8H3EU6ra/85673f9e660407e5e4481b1825968043/English_Harry_Potter_4_Epub_9781781105672.jpg?w=914&q=70&fm=jpg'

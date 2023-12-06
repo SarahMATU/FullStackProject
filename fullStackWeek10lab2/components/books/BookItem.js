@@ -4,11 +4,9 @@ import { useRouter } from 'next/router';
 
 function BookItem(props) {
   const router = useRouter();
-
   function showDetailsHandler() {
-    router.push('/' + props.id);
+    router.push(`/` + props.id);
   }
-
   return (
     <li className={classes.item}>
       <Card>
