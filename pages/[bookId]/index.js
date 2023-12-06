@@ -5,25 +5,29 @@ import { useContext } from 'react'
 
 export default function () {
     const globalCtx = useContext(GlobalContext)
-    const router = useRouter();
+	const router = useRouter();
 
-    // Back to basics, a simple for loop. Also trim() comes into play as it usually does!
+	// Back to basics, a simple for loop. Also trim() comes into play as it usually does!
     let bookDetails = null
-    for (let ii = 0; ii < globalCtx.theGlobalObject.books.length; ii++) {
-        let temp = globalCtx.theGlobalObject.books[ii]
-        if (temp.bookId.trim() == router.query.bookId.trim()) {
-            bookDetails = temp;
-        }
-    }
+	for (let ii = 0; ii < globalCtx.theGlobalObject.books.length; ii++) {
+		let temp = globalCtx.theGlobalObject.books[ii];
+		if (temp.bookId.trim() == router.query.bookId.trim()) {
+			bookDetails = temp;
+		}
+	}
 
-    return bookDetails ? (
-        <BookDetail 
-        image={temp.image} 
-        title={temp.title} 
-        description={temp.description} />
-    ) : (
-        <p>Book not Found</p>
-    );
+	return bookDetails ? (
+		<BookDetail
+			image={temp.image}
+			title={temp.title}
+			author={temp.author}
+			description={temp.description}
+		/>
+	) : (
+		<div className={classes.mainDiv}>
+			Book not Found
+		</div>
+	);
 }
 
 {/* <BookDetail

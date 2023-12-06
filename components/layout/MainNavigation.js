@@ -18,8 +18,8 @@ function MainNavigation() {
   const contents = [
     {title: 'Add a new Book', webAddress: '/new-book'},
     {title: 'Printer', webAddress: '/new-book'}, 
-
   ]
+  
   return (
     <header className={classes.header}>
       <div className={classes.title}>ATU Library</div>
