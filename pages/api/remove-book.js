@@ -1,7 +1,7 @@
 // pages/api/remove-book.js
 async function removeBook(req, res) {
     try {
-      const response = await fetch('http://localhost:8000/removeBook', {
+      const response = await fetch('http://nodejs:8000/removeBook', {
         method: 'POST',
         body: JSON.stringify({ _id: req.body._id }),
         headers: {
