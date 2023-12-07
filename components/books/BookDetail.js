@@ -23,7 +23,6 @@ function BookDetail(props) {
 					</div>
 				</div>
 			</div>
-
 			<div className={classes.footer}></div>
 		</section>
 	);
