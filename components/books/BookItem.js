@@ -1,19 +1,20 @@
 import Card from '../ui/Card';
 import classes from './BookItem.module.css';
+import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
+import GlobalContext from '../../pages/store/globalContext';
 
 function BookItem(props) {
   const router = useRouter();
+  const globalCtx = useContext(GlobalContext);
 
-  function showDetailsHandler() {
+  const showDetailsHandler = () => {
     router.push(`/` + props.id);
-  }
+  };
 
-  function editDetailsHandler() {
-    router.push(`/` + props.id);
-  }
-
-  function deleteDetailsHandler() {
+  async function removeBookHandler() {
+    await globalCtx.updateGlobals({ cmd: 'removeBook', newVal: props.id });
+    router.push('/');
   }
 
   return (
@@ -28,8 +29,7 @@ function BookItem(props) {
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
-          <button onClick={editDetailsHandler}>Edit Details</button>
-          <button onClick={deleteDetailsHandler}>Delete Details</button>
+          <button onClick={removeBookHandler}>Delete</button>
         </div>
       </Card>
     </li>
