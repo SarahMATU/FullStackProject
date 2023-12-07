@@ -7,6 +7,8 @@
 
 .detail img {
     width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .text {
@@ -69,14 +71,14 @@
     padding: 5px;
     justify-content: space-between;
     align-items: center;
-    
+    width: 100%;
 
     .image {
         box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         background-color: #ffffff;
         border-radius: 10px;
         padding: 15px;
-        width: 50%;
+        width: 70%;
     }
 }
 

@@ -12,7 +12,7 @@ export default function BookDetailPage() {
     for (let ii = 0; ii < globalCtx.theGlobalObject.books.length; ii++) {
         let temp = globalCtx.theGlobalObject.books[ii];
         // Check if bookId is defined before using trim()
-        if (temp._id.trim() == router.query.bookId.trim()) {
+        if (temp._id == router.query.bookId.trim()) {
             bookDetails = temp;
             break; // Exit the loop once a match is found
         }

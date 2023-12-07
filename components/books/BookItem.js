@@ -9,6 +9,13 @@ function BookItem(props) {
     router.push(`/` + props.id);
   }
 
+  function editDetailsHandler() {
+    router.push(`/` + props.id);
+  }
+
+  function deleteDetailsHandler() {
+  }
+
   return (
     <li className={classes.item}>
       <Card>
@@ -17,10 +24,12 @@ function BookItem(props) {
         </div>
         <div className={classes.content}>
           <h3>{props.title}</h3>
-          <author>{props.author}</author>
+          <p>{props.author}</p>
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
+          <button onClick={editDetailsHandler}>Edit Details</button>
+          <button onClick={deleteDetailsHandler}>Delete Details</button>
         </div>
       </Card>
     </li>
